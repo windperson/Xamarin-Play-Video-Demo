@@ -1,2 +1,2 @@
 # Xamarin-Play-Video-Demo
-Using MediaManager for Xamarin  to play video on Xamarin project
+Demonstrate using [MediaManager for Xamarin](https://www.nuget.org/packages/Plugin.MediaManager/) to play video on Xamarin iOS/Android Xamarin.Forms mobile App project.
