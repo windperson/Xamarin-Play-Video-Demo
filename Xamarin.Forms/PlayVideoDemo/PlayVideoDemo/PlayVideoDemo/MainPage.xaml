@@ -3,20 +3,20 @@
     x:Class="PlayVideoDemo.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:forms="clr-namespace:Plugin.MediaManager.Forms;assembly=Plugin.MediaManager.Forms"
-    xmlns:local="clr-namespace:PlayVideoDemo">
+    xmlns:local="clr-namespace:PlayVideoDemo"
+    xmlns:mm="clr-namespace:Plugin.MediaManager.Forms;assembly=Plugin.MediaManager.Forms">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <forms:VideoView
+            <mm:VideoView
                 Grid.Row="0"
                 Grid.RowSpan="1"
-                AspectMode="AspectFit"
+                AspectMode="AspectFill"
                 HorizontalOptions="Fill"
-                Source="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" />
+                Source="https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" />
             <Grid
                 Grid.Row="1"
                 Grid.RowSpan="1"

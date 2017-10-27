@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Plugin.MediaManager.Forms.iOS;
 
 namespace PlayVideoDemo.iOS
 {
@@ -22,6 +23,7 @@ namespace PlayVideoDemo.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            VideoViewRenderer.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
