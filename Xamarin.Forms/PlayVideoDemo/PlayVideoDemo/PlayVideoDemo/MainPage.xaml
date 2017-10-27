@@ -8,23 +8,21 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
                 <RowDefinition Height="3*" />
-                <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
             <mm:VideoView
+                x:Name="VideoView"
                 Grid.Row="0"
-                Grid.RowSpan="1"
                 AspectMode="AspectFill"
-                HorizontalOptions="Fill"
-                Source="https://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" />
+                HorizontalOptions="Fill" />
             <Grid
                 Grid.Row="1"
-                Grid.RowSpan="1"
-                Margin="20"
+                Margin="10"
                 HorizontalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*" />
-                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="2*" />
+                    <RowDefinition Height="5*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -35,45 +33,53 @@
                     Grid.Row="0"
                     Grid.ColumnSpan="3"
                     Orientation="Vertical">
+                    <ProgressBar x:Name="ProgressBar" HorizontalOptions="FillAndExpand" />
                     <StackLayout Orientation="Horizontal">
-                        <Label Text="Info: " />
-                        <Label x:Name="Info" />
+                        <Label Text="Duration: " />
+                        <Label x:Name="Duration" />
                     </StackLayout>
-                    <ProgressBar
-                        x:Name="ProgressBar"
-                        Grid.ColumnSpan="3"
-                        HorizontalOptions="FillAndExpand" />
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Position: " />
+                        <Label x:Name="Position" />
+                    </StackLayout>
+
                 </StackLayout>
 
                 <Button
+                    x:Name="PlayBtn"
                     Grid.Row="1"
                     Grid.Column="0"
                     BackgroundColor="Gray"
                     Clicked="PlayClicked"
                     HeightRequest="50"
+                    IsEnabled="True"
                     Text="Play"
                     TextColor="White"
-                    VerticalOptions="Center"
+                    VerticalOptions="End"
                     WidthRequest="100" />
                 <Button
+                    x:Name="PauseBtn"
                     Grid.Row="1"
                     Grid.Column="1"
                     BackgroundColor="Gray"
                     Clicked="PauseClicked"
                     HeightRequest="50"
+                    IsEnabled="False"
                     Text="Pause"
                     TextColor="White"
-                    VerticalOptions="Center"
+                    VerticalOptions="End"
                     WidthRequest="100" />
                 <Button
+                    x:Name="StopBtn"
                     Grid.Row="1"
                     Grid.Column="2"
                     BackgroundColor="Gray"
                     Clicked="StopClicked"
                     HeightRequest="50"
+                    IsEnabled="False"
                     Text="Stop"
                     TextColor="White"
-                    VerticalOptions="Center"
+                    VerticalOptions="End"
                     WidthRequest="100" />
             </Grid>
         </Grid>
