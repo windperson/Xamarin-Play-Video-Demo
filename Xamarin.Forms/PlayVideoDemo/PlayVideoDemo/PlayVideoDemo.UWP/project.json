@@ -1,9 +1,10 @@
 ﻿{
   "dependencies": {
+    "Microsoft.Bcl.Build": "1.0.21",
     "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
     "Plugin.MediaManager": "0.4.5",
     "Plugin.MediaManager.Forms": "0.4.5",
-    "Xamarin.Forms": "2.4.0.18342"
+    "Xamarin.Forms": "2.4.0.38779"
   },
   "frameworks": {
     "uap10.0.10586": {}
