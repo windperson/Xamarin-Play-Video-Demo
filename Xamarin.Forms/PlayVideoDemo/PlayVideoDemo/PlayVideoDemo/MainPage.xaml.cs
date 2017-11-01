@@ -28,7 +28,21 @@ namespace PlayVideoDemo
 
         private void SetPlayProgressChangeEventHandler()
         {
+            _manager.MediaFileChanged += _manager_MediaFileChanged;
             _manager.PlayingChanged += _manager_PlayingChanged;
+        }
+
+        private void _manager_MediaFileChanged(object sender, Plugin.MediaManager.Abstractions.EventArguments.MediaFileChangedEventArgs e)
+        {
+            if (e.File.Metadata.Duration > 0)
+            {
+                var total = new TimeSpan(0, 0, 0, e.File.Metadata.Duration);
+                Duration.Text = total.ToString(@"hh\:mm\:ss");
+            }
+            else
+            {
+                Duration.Text = "Unknown";
+            }
         }
 
         private void SetVideoSource()
@@ -44,9 +58,6 @@ namespace PlayVideoDemo
 
         private void _manager_PlayingChanged(object sender, Plugin.MediaManager.Abstractions.EventArguments.PlayingChangedEventArgs e)
         {
-#if DEBUG
-            System.Diagnostics.Debug.WriteLine("event invoked");
-#endif
             Device.BeginInvokeOnMainThread(() =>
             {
                 ProgressBar.Progress = e.Progress;

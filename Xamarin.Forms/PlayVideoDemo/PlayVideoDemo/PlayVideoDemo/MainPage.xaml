@@ -15,7 +15,8 @@
                 x:Name="VideoView"
                 Grid.Row="0"
                 AspectMode="AspectFill"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
             <Grid
                 Grid.Row="1"
                 Margin="10"
